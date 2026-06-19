@@ -3,7 +3,10 @@ from .models import Categories,FoodItem
 
 
 # Register your models here.
-admin.site.register(Categories)
+# admin.site.register(Categories)
+@admin.register(Categories)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['id','category_name']
 
 
 @admin.register(FoodItem)
