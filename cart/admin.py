@@ -8,4 +8,4 @@ admin.site.register(Cart)
 
 @admin.register(CartItems)
 class AdminCartItems(admin.ModelAdmin):
-    list_display = ['cart','food_items','quantity']
+    list_display = ['cart','food_items','quantity','q_price']

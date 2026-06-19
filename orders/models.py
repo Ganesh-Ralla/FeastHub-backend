@@ -19,6 +19,9 @@ class OrderItems(models.Model):
     order = models.ForeignKey(Orders, on_delete=models.CASCADE, related_name='orderitems')
     food = models.ForeignKey(FoodItem, on_delete=models.CASCADE, related_name='fooditems')
 
+    quantity = models.PositiveIntegerField(default=1)
+    sub_total = models.DecimalField(max_digits=10,decimal_places=2, default=0)
+
     def __str__(self):
         return self.food.name
 

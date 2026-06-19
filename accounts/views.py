@@ -24,3 +24,9 @@ class UserDetails(generics.RetrieveUpdateDestroyAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+class GetUser(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializers
+    lookup_field = 'pk'

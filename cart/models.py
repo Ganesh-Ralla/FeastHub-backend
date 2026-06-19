@@ -15,6 +15,7 @@ class CartItems(models.Model):
     food_items = models.ForeignKey(FoodItem, on_delete=models.CASCADE, related_name='food_items')
 
     quantity = models.PositiveIntegerField(default=1)
+    q_price = models.FloatField(blank=True,default=0)
 
     def __str__(self):
         return self.food_items.name

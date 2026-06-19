@@ -5,6 +5,8 @@ urlpatterns = [
     path('register-user/',views.RegisterUser.as_view()),
     path('profile/',views.UserDetails.as_view()),
 
+    path('user/<int:pk>/',views.GetUser.as_view()),
+
 
     path('login/',TokenObtainPairView.as_view()),
     path('refresh/',TokenRefreshView.as_view()),
